@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popkorner — Support</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --text: #e8e8e8;
+            --muted: #888;
+            --accent: #f5c518;
+            --border: #222;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .brand {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .brand a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+        .brand span { color: var(--accent); }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 12px;
+        }
+        p, li {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        li { margin-bottom: 6px; }
+        strong { color: var(--text); }
+        a { color: var(--accent); }
+        .contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+        .contact-card p { margin-bottom: 8px; }
+        .contact-card p:last-child { margin-bottom: 0; }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .faq-a {
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+        footer a { color: var(--muted); margin: 0 8px; }
+        @media (max-width: 480px) {
+            .container { padding: 32px 16px 64px; }
+            h1 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">
+            <a href="/">🍿 Pop<span>korner</span></a>
+        </div>
+
+        <h1>Support</h1>
+        <p class="subtitle">Need help with Popkorner? We're here for you.</p>
+
+        <div class="contact-card">
+            <p><strong>Email us</strong></p>
+            <p><a href="mailto:support@popkorner.app">support@popkorner.app</a></p>
+            <p style="color: var(--muted); font-size: 0.85rem;">We typically respond within 24 hours.</p>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <p class="faq-q">How do I delete my account?</p>
+            <p class="faq-a">Open Popkorner, go to your profile, tap the gear icon, then "Account Settings", and select "Delete Account". This permanently deletes all your data including reviews, watchlist, and profile photo.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">What are Flop, Pop, and Top ratings?</p>
+            <p class="faq-a"><strong>Flop</strong> 🌽 means "not for me, skip it." <strong>Pop</strong> 🍿 means "good time, enjoyed it." <strong>Top</strong> 🏆 means "absolute cinema, peak." These replace traditional star ratings with a simpler, more expressive system.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">What are Vibe Checks / Emotion Tags?</p>
+            <p class="faq-a">When you review a movie, you can tag it with emotions like Mind Blown 🤯, Cozy 🧸, Adrenaline ⚡, Tearjerker 😭, LOL 😂, Intense 🔥, Inspiring ✨, and Nostalgic 💛. These help capture how a movie made you feel beyond just a rating.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">Where does the movie data come from?</p>
+            <p class="faq-a">Movie and TV show information (titles, posters, descriptions, streaming availability) is provided by <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a> (The Movie Database). If you notice incorrect movie data, you can help improve it on TMDB's website.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">Can I change my username or profile picture?</p>
+            <p class="faq-a">Yes. Go to your profile and tap the edit button to update your display name or profile photo at any time.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">Is Popkorner free?</p>
+            <p class="faq-a">Yes, Popkorner is free to use. There are no ads and no premium subscription.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-q">I found a bug. How do I report it?</p>
+            <p class="faq-a">Email us at <a href="mailto:support@popkorner.app">support@popkorner.app</a> with a description of what happened, what you expected, and your device model and iOS version. Screenshots help too.</p>
+        </div>
+
+        <footer>
+            <a href="/legal">Privacy Policy</a> &middot; <a href="/legal#terms">Terms of Service</a>
+            <br><br>
+            &copy; 2026 Popkorner. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
