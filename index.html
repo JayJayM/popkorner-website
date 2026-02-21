@@ -10,6 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://popkorner.app">
     <meta name="apple-itunes-app" content="app-id=XXXXXXXXXX">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍿</text></svg>">
     <style>
         :root {
             --bg: #0a0a0a;
@@ -30,7 +31,7 @@
 
         /* Hero */
         .hero {
-            min-height: 100vh;
+            min-height: 70vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -51,28 +52,18 @@
             pointer-events: none;
         }
         .logo {
+            font-size: 4rem;
             margin-bottom: 24px;
             filter: drop-shadow(0 0 12px rgba(255, 217, 61, 0.8)) drop-shadow(0 0 35px rgba(255, 165, 0, 0.5));
-        }
-        .logo svg {
-            width: 80px;
-            height: 80px;
         }
         h1 {
             font-size: clamp(2rem, 6vw, 3.5rem);
             font-weight: 800;
             letter-spacing: -0.04em;
             line-height: 1.1;
-            margin-bottom: 16px;
-        }
-        h1 span { color: var(--accent); }
-        .tagline {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: var(--muted);
-            max-width: 480px;
-            line-height: 1.6;
             margin-bottom: 40px;
         }
+        h1 span { color: var(--accent); }
 
         /* App Store badge placeholder */
         .cta {
@@ -91,40 +82,172 @@
         .cta:hover { transform: scale(1.03); opacity: 0.95; }
         .cta svg { width: 22px; height: 22px; }
 
-        /* Features */
-        .features {
-            max-width: 960px;
+        .coming-soon {
+            margin-top: 32px;
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* Feature Rows */
+        .feature-row {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+            max-width: 1060px;
             margin: 0 auto;
-            padding: 80px 24px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 32px;
+            padding: 40px 24px;
         }
-        .feature {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 32px 28px;
+        .feature-row.reverse {
+            flex-direction: row-reverse;
         }
-        .feature-icon {
-            font-size: 2rem;
+        .feature-text {
+            flex: 1;
+        }
+        .feature-text h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
             margin-bottom: 16px;
         }
-        .feature h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .feature p {
+        .feature-text p {
             color: var(--muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
+        .feature-visual {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 220px;
+        }
+
+        /* Poster Stack (Discover) */
+        .poster-stack {
+            position: relative;
+            width: 280px;
+            height: 240px;
+            perspective: 600px;
+        }
+        .poster-card {
+            position: absolute;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .poster-card:nth-child(1) {
+            width: 115px; height: 172px;
+            background: linear-gradient(135deg, #0d2137, #0f4c5c);
+            left: 10px; top: 30px;
+            transform: rotate(-8deg);
+            z-index: 1;
+        }
+        .poster-card:nth-child(2) {
+            width: 140px; height: 210px;
+            background: linear-gradient(135deg, #0f3460, #16a085);
+            left: 70px; top: 10px;
+            transform: rotateY(-5deg);
+            z-index: 3;
+        }
+        .poster-card:nth-child(3) {
+            width: 115px; height: 172px;
+            background: linear-gradient(135deg, #0a2647, #1a8a7a);
+            right: 10px; top: 30px;
+            transform: rotate(8deg);
+            z-index: 2;
+        }
+
+        /* Emotion Orbs (Feel) */
+        .emotion-orbs {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        .emotion-orb {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.18);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+        }
+        .emotion-orb:nth-child(2) {
+            margin-left: -18px;
+            z-index: 2;
+            width: 100px;
+            height: 100px;
+            font-size: 2.5rem;
+        }
+        .emotion-orb:nth-child(3) {
+            margin-left: -18px;
+            z-index: 1;
+        }
+
+        /* Verdict Card (Share) */
+        .verdict-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .verdict-card {
+            width: 180px;
+            height: 270px;
+            border-radius: 24px;
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            animation: wobble 7s ease-in-out infinite;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        .verdict-card .verdict-text {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            color: rgba(255,255,255,0.12);
+            text-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 -1px 0 rgba(0,0,0,0.3);
+        }
+        .verdict-card .verdict-emoji {
+            font-size: 2.4rem;
+        }
+        @keyframes wobble {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        /* Emotion pills */
+        .emotion-pill {
+            position: absolute;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 1rem;
+            white-space: nowrap;
+        }
+        .emotion-pill:nth-child(2) { top: 10px; right: -40px; }
+        .emotion-pill:nth-child(3) { bottom: 20px; left: -50px; }
+        .emotion-pill:nth-child(4) { bottom: -10px; right: -30px; }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 48px 24px;
+            padding: 32px 24px;
             border-top: 1px solid var(--border);
             color: var(--muted);
             font-size: 0.85rem;
@@ -138,38 +261,34 @@
         }
         footer a:hover { color: var(--text); }
 
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-row,
+            .feature-row.reverse {
+                flex-direction: column;
+                gap: 24px;
+                padding: 32px 24px;
+            }
+            .feature-visual {
+                order: -1;
+            }
+            .feature-text {
+                text-align: center;
+            }
+        }
         @media (max-width: 480px) {
-            .hero { padding: 80px 20px 48px; }
-            .features { padding: 48px 20px; gap: 20px; }
+            .hero { padding: 60px 20px 32px; }
+            .feature-row,
+            .feature-row.reverse {
+                padding: 28px 20px;
+            }
         }
     </style>
 </head>
 <body>
     <section class="hero">
-        <div class="logo">
-            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <linearGradient id="popcorn-gradient" x1="50" y1="8" x2="50" y2="92" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stop-color="#FFD94D"/>
-                        <stop offset="100%" stop-color="#FFD93D"/>
-                    </linearGradient>
-                </defs>
-                <!-- Popcorn kernels (top) -->
-                <circle cx="50" cy="24" r="14" fill="url(#popcorn-gradient)"/>
-                <circle cx="32" cy="30" r="12" fill="url(#popcorn-gradient)"/>
-                <circle cx="68" cy="30" r="12" fill="url(#popcorn-gradient)"/>
-                <circle cx="40" cy="18" r="10" fill="url(#popcorn-gradient)"/>
-                <circle cx="60" cy="18" r="10" fill="url(#popcorn-gradient)"/>
-                <!-- Bucket (bottom) -->
-                <path d="M28 40 L24 82 C24 86 28 90 34 90 L66 90 C72 90 76 86 76 82 L72 40 Z" fill="url(#popcorn-gradient)"/>
-                <!-- Bucket stripes -->
-                <path d="M30 52 L70 52" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
-                <path d="M29 64 L71 64" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
-                <path d="M27 76 L73 76" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
-            </svg>
-        </div>
-        <h1>Discover. Feel.<br><span>Share.</span></h1>
-        <p class="tagline">Discover what's worth your popcorn, capture exactly how a story made you feel, and turn your reactions into beautiful review art.</p>
+        <div class="logo">🍿</div>
+        <h1>Discover. Feel. <span>Share.</span></h1>
         <!-- Replace XXXXXXXXXX with your real App Store ID and uncomment the link -->
         <!--
         <a href="https://apps.apple.com/app/idXXXXXXXXXX" class="cta">
@@ -177,24 +296,52 @@
             Download on the App Store
         </a>
         -->
-        <p class="tagline" style="margin-top: 32px; font-size: 0.9rem;">Coming soon to the App Store</p>
+        <p class="coming-soon">Coming soon to the App Store</p>
     </section>
 
-    <section class="features">
-        <div class="feature">
-            <div class="feature-icon">🍿</div>
-            <h3>Discover</h3>
-            <p>From trending hits to what your friends are watching, discover what's worth your popcorn. Build your ultimate watchlist and count down to new releases.</p>
+    <section class="feature-row">
+        <div class="feature-visual">
+            <div class="poster-stack">
+                <div class="poster-card"></div>
+                <div class="poster-card"></div>
+                <div class="poster-card"></div>
+            </div>
         </div>
-        <div class="feature">
-            <div class="feature-icon">🤯😂🥺</div>
-            <h3>Feel</h3>
-            <p>Rate movies as Flop 🌽, Pop 🍿, or Top 🏆 — then tag them with how they made you feel. Mindblown, LOL, Sobbed, Screamed, Intense, or Bored. Capture the whole experience.</p>
+        <div class="feature-text">
+            <h2>Discover what's worth your popcorn</h2>
+            <p>From trending hits to what your friends are watching, your only job is deciding between the theater or the couch.</p>
         </div>
-        <div class="feature">
-            <div class="feature-icon">🎬</div>
-            <h3>Share</h3>
-            <p>Turn your reactions into beautiful review art and spark the conversation about that crazy plot twist. Share your verdict with friends.</p>
+    </section>
+
+    <section class="feature-row reverse">
+        <div class="feature-visual">
+            <div class="emotion-orbs">
+                <div class="emotion-orb">🤯</div>
+                <div class="emotion-orb">😂</div>
+                <div class="emotion-orb">🥺</div>
+            </div>
+        </div>
+        <div class="feature-text">
+            <h2>Feel the whole experience</h2>
+            <p>Count down to new releases, build your ultimate watchlist, and capture exactly how a story made you feel.</p>
+        </div>
+    </section>
+
+    <section class="feature-row">
+        <div class="feature-visual">
+            <div class="verdict-wrapper">
+                <div class="verdict-card">
+                    <div class="verdict-text">POP</div>
+                    <div class="verdict-emoji">🍿</div>
+                </div>
+                <div class="emotion-pill">🤯</div>
+                <div class="emotion-pill">😂</div>
+                <div class="emotion-pill">🥺</div>
+            </div>
+        </div>
+        <div class="feature-text">
+            <h2>Share the popcorn</h2>
+            <p>Turn your reactions into beautiful review art, and spark the conversation about that crazy plot twist.</p>
         </div>
     </section>
 
@@ -204,8 +351,9 @@
             <a href="/legal#terms">Terms of Service</a>
             <a href="/support">Support</a>
         </nav>
-        <p>&copy; 2026 Popkorner. All rights reserved.</p>
-        <p style="margin-top: 8px; font-size: 0.75rem;">Movie data provided by <a href="https://www.themoviedb.org/" target="_blank" rel="noopener" style="color: var(--accent);">TMDB</a>.</p>
+        <p>Made with 🍿 for movie lovers</p>
+        <p style="margin-top: 8px;">&copy; 2026 Popkorner. All rights reserved.</p>
+        <p style="margin-top: 8px; font-size: 0.75rem;">Movie data provided by <a href="https://www.themoviedb.org/" target="_blank" rel="noopener" style="color: var(--text);">TMDB</a>.</p>
     </footer>
 </body>
 </html>
