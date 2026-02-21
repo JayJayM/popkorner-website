@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Popkorner — Movie Vibes & Discovery</title>
-    <meta name="description" content="Discover what's worth your popcorn. Popkorner replaces boring star ratings with emotion-based Vibe Checks. Express how movies actually make you feel.">
+    <meta name="description" content="Discover what's worth your popcorn. Feel the whole experience. Share the popcorn. Popkorner is a movie discovery app powered by vibes, not stars.">
     <meta property="og:title" content="Popkorner — Discover. Feel. Share.">
-    <meta property="og:description" content="Discover what's worth your popcorn. Rate movies with vibes, not stars.">
+    <meta property="og:description" content="Discover what's worth your popcorn. A movie discovery app powered by vibes, not stars.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://popkorner.app">
     <meta name="apple-itunes-app" content="app-id=XXXXXXXXXX">
@@ -51,8 +51,12 @@
             pointer-events: none;
         }
         .logo {
-            font-size: 4rem;
             margin-bottom: 24px;
+            filter: drop-shadow(0 0 12px rgba(255, 217, 61, 0.8)) drop-shadow(0 0 35px rgba(255, 165, 0, 0.5));
+        }
+        .logo svg {
+            width: 80px;
+            height: 80px;
         }
         h1 {
             font-size: clamp(2rem, 6vw, 3.5rem);
@@ -142,9 +146,30 @@
 </head>
 <body>
     <section class="hero">
-        <div class="logo">🍿</div>
+        <div class="logo">
+            <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="popcorn-gradient" x1="50" y1="8" x2="50" y2="92" gradientUnits="userSpaceOnUse">
+                        <stop offset="0%" stop-color="#FFD94D"/>
+                        <stop offset="100%" stop-color="#FFD93D"/>
+                    </linearGradient>
+                </defs>
+                <!-- Popcorn kernels (top) -->
+                <circle cx="50" cy="24" r="14" fill="url(#popcorn-gradient)"/>
+                <circle cx="32" cy="30" r="12" fill="url(#popcorn-gradient)"/>
+                <circle cx="68" cy="30" r="12" fill="url(#popcorn-gradient)"/>
+                <circle cx="40" cy="18" r="10" fill="url(#popcorn-gradient)"/>
+                <circle cx="60" cy="18" r="10" fill="url(#popcorn-gradient)"/>
+                <!-- Bucket (bottom) -->
+                <path d="M28 40 L24 82 C24 86 28 90 34 90 L66 90 C72 90 76 86 76 82 L72 40 Z" fill="url(#popcorn-gradient)"/>
+                <!-- Bucket stripes -->
+                <path d="M30 52 L70 52" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
+                <path d="M29 64 L71 64" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
+                <path d="M27 76 L73 76" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
+            </svg>
+        </div>
         <h1>Discover. Feel.<br><span>Share.</span></h1>
-        <p class="tagline">Popkorner replaces boring star ratings with emotion-based Vibe Checks. From trending hits to what your friends are watching, your only job is deciding between the theater or the couch.</p>
+        <p class="tagline">Discover what's worth your popcorn, capture exactly how a story made you feel, and turn your reactions into beautiful review art.</p>
         <!-- Replace XXXXXXXXXX with your real App Store ID and uncomment the link -->
         <!--
         <a href="https://apps.apple.com/app/idXXXXXXXXXX" class="cta">
