@@ -271,10 +271,31 @@
             }
             .feature-visual {
                 order: -1;
+                min-height: unset;
+                width: 100%;
             }
             .feature-text {
                 text-align: center;
             }
+            /* Contain poster stack on mobile */
+            .poster-stack {
+                width: 240px;
+                height: 200px;
+                transform: scale(0.9);
+            }
+            .poster-card:nth-child(1) { width: 95px; height: 142px; left: 8px; top: 25px; }
+            .poster-card:nth-child(2) { width: 120px; height: 178px; left: 60px; top: 8px; }
+            .poster-card:nth-child(3) { width: 95px; height: 142px; right: 8px; top: 25px; }
+            /* Hide overflow pills on mobile — card itself is enough */
+            .emotion-pill { display: none; }
+            /* Footer nav wraps on small screens */
+            footer nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            footer nav a { margin: 0; }
         }
         @media (max-width: 480px) {
             .hero { padding: 60px 20px 32px; }
@@ -282,6 +303,13 @@
             .feature-row.reverse {
                 padding: 28px 20px;
             }
+            .poster-stack {
+                width: 210px;
+                height: 180px;
+            }
+            .poster-card:nth-child(1) { width: 82px; height: 123px; left: 6px; top: 20px; }
+            .poster-card:nth-child(2) { width: 105px; height: 156px; left: 52px; top: 6px; }
+            .poster-card:nth-child(3) { width: 82px; height: 123px; right: 6px; top: 20px; }
         }
     </style>
 </head>
