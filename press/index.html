@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popkorner — Press & Media Kit</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/Popkorner-logo.svg">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #141414;
+            --text: #e8e8e8;
+            --muted: #888;
+            --accent: #f5c518;
+            --border: #222;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 96px;
+        }
+        .brand {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .brand a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+        .subtitle {
+            color: var(--muted);
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+        .subtitle a { color: var(--muted); }
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 48px;
+            margin-bottom: 16px;
+        }
+        p, li {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        ul {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        li { margin-bottom: 6px; }
+        strong { color: var(--text); }
+        a { color: var(--accent); }
+
+        /* Fact sheet table */
+        .fact-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        .fact-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+        .fact-table tr:last-child {
+            border-bottom: none;
+        }
+        .fact-table td {
+            padding: 10px 0;
+            vertical-align: top;
+            color: #ccc;
+        }
+        .fact-table td:first-child {
+            width: 160px;
+            color: var(--muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 500;
+            padding-right: 16px;
+        }
+
+        /* Brand colors */
+        .color-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .color-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            font-family: "SF Mono", "Menlo", monospace;
+        }
+        .color-swatch {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* Downloads */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .download-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            text-align: center;
+        }
+        .download-card img {
+            max-width: 80px;
+            max-height: 80px;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+        .download-card .dl-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.4;
+        }
+        .download-card a {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .screenshot-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+        .screenshot-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .screenshot-item img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 9/19;
+        }
+        .screenshot-item .sc-footer {
+            padding: 10px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .screenshot-item .sc-name {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        .screenshot-item a {
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+        footer a { color: var(--muted); margin: 0 8px; }
+        @media (max-width: 480px) {
+            .container { padding: 32px 16px 64px; }
+            h1 { font-size: 1.4rem; }
+            .fact-table td:first-child { width: 120px; }
+            .download-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="brand">
+            <a href="/"><img src="../assets/Popkorner-logo.svg" alt="" style="width:26px;height:26px;vertical-align:middle;margin-right:8px;filter:drop-shadow(0 0 6px rgba(255,210,50,0.5))" aria-hidden="true">Popkorner</a>
+        </div>
+
+        <h1>Press &amp; Media Kit</h1>
+        <p class="subtitle">Everything you need to write about Popkorner. For anything else, reach us at <a href="mailto:press@popkorner.app">press@popkorner.app</a>.</p>
+
+        <!-- ── FACT SHEET ── -->
+        <h2>Fact Sheet</h2>
+        <table class="fact-table">
+            <tbody>
+                <tr>
+                    <td>App name</td>
+                    <td><strong>Popkorner</strong></td>
+                </tr>
+                <tr>
+                    <td>Tagline</td>
+                    <td>So much to watch. Not enough time.</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>Entertainment</td>
+                </tr>
+                <tr>
+                    <td>Platform</td>
+                    <td>iPhone, iOS 26 and later</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>Free, with an optional premium subscription</td>
+                </tr>
+                <tr>
+                    <td>Developer</td>
+                    <td>Jean-Mathieu Saponaro, France</td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td><a href="https://popkorner.app">popkorner.app</a></td>
+                </tr>
+                <tr>
+                    <td>Press contact</td>
+                    <td><a href="mailto:press@popkorner.app">press@popkorner.app</a></td>
+                </tr>
+                <tr>
+                    <td>Social</td>
+                    <td>@popkorner.app</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ── ABOUT ── -->
+        <h2>About Popkorner</h2>
+        <p><strong>One line:</strong> Discover what's playing, track what's coming, save your picks, see what your friends loved, and share your reviews beautifully.</p>
+        <p><strong>Short:</strong> Popkorner is an iPhone app for people who love cinema. Discover new trailers, what's new in theaters and streaming, keep a living library of everything you've watched and everything you still want to, and never miss a release you've been waiting for. Record not just a star rating but how each film made you feel and share your reviews with friends.</p>
+        <p><strong>Full:</strong> Popkorner is a movie-tracking and social app for iPhone, built for people who love cinema and want more than a spreadsheet of star ratings. At its heart is a simple idea: what a film made you feel matters as much as how many stars you'd give it. Discover new trailers, what's in theaters, and what's streaming from a single Spotlight feed. Build a living Library of what you've watched, what's on your list, and upcoming releases you don't want to miss. Give each film a verdict — Flop, Pop, or Top — and tag the emotion it left you with. Follow friends to see what they're watching, share standout moments. Popkorner is made in France, with a lot of care for craft, motion, and the small details that make an app feel alive.</p>
+
+        <!-- ── BRAND ── -->
+        <h2>Brand</h2>
+        <p><strong>Tagline:</strong> So much to watch. Not enough time.</p>
+        <p><strong>Colors</strong></p>
+        <div class="color-list">
+            <div class="color-chip">
+                <span class="color-swatch" style="background:#FFD600"></span>
+                #FFD600
+            </div>
+            <div class="color-chip">
+                <span class="color-swatch" style="background:#1F1A40"></span>
+                #1F1A40
+            </div>
+            <div class="color-chip">
+                <span class="color-swatch" style="background:#FF6B6B"></span>
+                #FF6B6B
+            </div>
+        </div>
+
+        <!-- ── DOWNLOADS ── -->
+        <h2>Downloads</h2>
+        <div class="download-grid">
+            <div class="download-card">
+                <img src="../assets/Popkorner-logo.svg" alt="Popkorner app icon">
+                <div class="dl-label">Popkorner Logo<br>SVG</div>
+                <a href="../assets/Popkorner-logo.svg" download>Download</a>
+            </div>
+            <div class="download-card">
+                <img src="../assets/Popkorner-logo.png" alt="Popkorner wordmark">
+                <div class="dl-label">Popkorner Logo<br>PNG</div>
+                <a href="../assets/Popkorner-logo.png" download>Download</a>
+            </div>
+        </div>
+
+        <h2>Screenshots</h2>
+        <div class="screenshot-list">
+            <div class="screenshot-item">
+                <img src="../assets/screenshots/In%20Teaters.png" alt="In Theaters screen">
+                <div class="sc-footer">
+                    <span class="sc-name">In Theaters</span>
+                    <a href="../assets/screenshots/In%20Teaters.png" download>Download</a>
+                </div>
+            </div>
+            <div class="screenshot-item">
+                <img src="../assets/screenshots/friends.png" alt="Friends screen">
+                <div class="sc-footer">
+                    <span class="sc-name">Friends</span>
+                    <a href="../assets/screenshots/friends.png" download>Download</a>
+                </div>
+            </div>
+            <div class="screenshot-item">
+                <img src="../assets/screenshots/to%20watch.png" alt="To Watch screen">
+                <div class="sc-footer">
+                    <span class="sc-name">To Watch</span>
+                    <a href="../assets/screenshots/to%20watch.png" download>Download</a>
+                </div>
+            </div>
+            <div class="screenshot-item">
+                <img src="../assets/screenshots/upcoming.png" alt="Upcoming screen">
+                <div class="sc-footer">
+                    <span class="sc-name">Upcoming</span>
+                    <a href="../assets/screenshots/upcoming.png" download>Download</a>
+                </div>
+            </div>
+            <div class="screenshot-item">
+                <img src="../assets/screenshots/review%20story.jpeg" alt="Review screen">
+                <div class="sc-footer">
+                    <span class="sc-name">Review</span>
+                    <a href="../assets/screenshots/review%20story.jpeg" download>Download</a>
+                </div>
+            </div>
+            <div class="screenshot-item">
+                <img src="../assets/screenshots/pass%20and%20stats.png" alt="Statistics screen">
+                <div class="sc-footer">
+                    <span class="sc-name">Statistics</span>
+                    <a href="../assets/screenshots/pass%20and%20stats.png" download>Download</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <a href="/privacy">Privacy Policy</a> &middot;
+            <a href="/terms">Terms of Service</a> &middot;
+            <a href="/support">Support</a>
+            <br><br>
+            &copy; 2026 Popkorner. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
