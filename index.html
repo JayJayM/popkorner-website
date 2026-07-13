@@ -98,26 +98,16 @@
         .nav-coming {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 7px 14px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--border-strong);
-            color: var(--muted);
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
+            height: 40px;
+            transition: opacity 0.2s ease;
         }
-        .nav-coming::before {
-            content: '';
-            width: 6px; height: 6px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 8px var(--accent-glow);
-            animation: pulse-dot 2s ease-in-out infinite;
+        .nav-coming img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
+        .nav-coming:hover {
+            opacity: 0.8;
         }
 
         /* ─── Hero ────────────────────────────────────────────────────── */
@@ -254,25 +244,15 @@
         .hero-cta {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: var(--radius-pill);
-            border: 1px solid var(--border-strong);
-            color: var(--text);
-            font-size: 0.92rem;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            letter-spacing: -0.005em;
+            transition: opacity 0.2s ease;
         }
-        .hero-cta::before {
-            content: '';
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 10px var(--accent-glow);
-            animation: pulse-dot 2s ease-in-out infinite;
+        .hero-cta img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
+        .hero-cta:hover {
+            opacity: 0.8;
         }
         .scroll-hint {
             position: absolute;
@@ -969,21 +949,15 @@
         .cta-final {
             display: inline-flex;
             align-items: center;
-            gap: 12px;
-            padding: 16px 32px;
-            border-radius: var(--radius-pill);
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border-strong);
-            color: var(--text);
-            font-size: 0.95rem;
-            font-weight: 500;
+            transition: opacity 0.2s ease;
         }
-        .cta-final .dot {
-            width: 8px; height: 8px;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 12px var(--accent-glow);
-            animation: pulse-dot 2s ease-in-out infinite;
+        .cta-final img {
+            height: 54px;
+            width: auto;
+            display: block;
+        }
+        .cta-final:hover {
+            opacity: 0.8;
         }
 
         /* ─── Footer ──────────────────────────────────────────────────── */
@@ -1121,7 +1095,6 @@
         @media (max-width: 480px) {
             .hero { padding-top: calc(var(--nav-h) + 24px); }
             .hero h1 { letter-spacing: -0.025em; }
-            .nav-coming { padding: 6px 12px; font-size: 0.72rem; }
         }
 
         /* ─── Motion preferences ──────────────────────────────────────── */
@@ -1143,7 +1116,9 @@
         <img src="assets/Popkorner-logo.svg" alt="" class="icon" aria-hidden="true">
         <span class="name">Popkorner</span>
     </a>
-    <span class="nav-coming">Coming soon</span>
+    <a class="nav-coming" href="https://apps.apple.com/app/id6759470556" target="_blank" rel="noopener">
+        <img src="assets/app-store-badge-black.svg" alt="Download on the App Store">
+    </a>
 </nav>
 
 <!-- ─────────────────────── HERO ─────────────────────── -->
@@ -1213,7 +1188,9 @@
         <h1>So much to watch.<br>Not enough <span class="pop">time.</span></h1>
         <img src="assets/Popkorner-logo.svg" alt="" class="hero-icon" aria-hidden="true">
         <p class="hero-sub">Discover what's playing, track what's coming, save your picks, and see what your friends loved.</p>
-        <span class="hero-cta">Coming soon to the App Store</span>
+        <a class="hero-cta" href="https://apps.apple.com/app/id6759470556" target="_blank" rel="noopener">
+            <img src="assets/app-store-badge-black.svg" alt="Download on the App Store">
+        </a>
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -1483,7 +1460,9 @@
 <!-- ─────────────────────── CTA ─────────────────────── -->
 <section class="cta-banner">
     <div class="cta-content">
-        <span class="cta-final reveal"><span class="dot"></span> Coming soon to the App Store</span>
+        <a class="cta-final reveal" href="https://apps.apple.com/app/id6759470556" target="_blank" rel="noopener">
+            <img src="assets/app-store-badge-black.svg" alt="Download on the App Store">
+        </a>
     </div>
 </section>
 
