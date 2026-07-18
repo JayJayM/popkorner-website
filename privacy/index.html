@@ -57,6 +57,13 @@
             margin-bottom: 12px;
             color: var(--text);
         }
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
         p, li {
             color: #ccc;
             font-size: 0.95rem;
@@ -112,7 +119,7 @@
         </div>
 
         <h1>Privacy Policy</h1>
-        <p class="effective">Effective date: March 15, 2026</p>
+        <p class="effective">Effective date: July 19, 2026</p>
 
         <p>Popkorner ("we", "us", or "our") is a movie discovery app. We respect your privacy and are committed to protecting your personal data. This policy explains what we collect, why, and how you can control it.</p>
 
@@ -158,6 +165,16 @@
                         <td>Accelerometer and gyroscope data (processed on-device only)</td>
                         <td>Interactive 3D card effects; never transmitted to any server</td>
                     </tr>
+                    <tr>
+                        <td><strong>Usage &amp; diagnostics</strong></td>
+                        <td>Which screens you open, actions you take (such as tapping a verdict or reaction), performance timings, and crash and error reports</td>
+                        <td>Understand how the app is used, fix bugs, and improve performance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Session recordings</strong> (optional)</td>
+                        <td>A replay of your on-screen interactions, with any text you enter masked — collected only if you turn it on</td>
+                        <td>Diagnose usability problems and improve the experience</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -167,9 +184,9 @@
             <li>We do <strong>not</strong> collect your location</li>
             <li>We do <strong>not</strong> collect your contacts or address book</li>
             <li>We do <strong>not</strong> collect health, financial, or biometric data</li>
-            <li>We do <strong>not</strong> use advertising trackers or analytics SDKs</li>
+            <li>We do <strong>not</strong> use advertising trackers or sell your data to advertisers</li>
             <li>We do <strong>not</strong> sell or share your data with advertisers</li>
-            <li>Note: Apple may collect anonymized usage and crash data through its built-in App Analytics system, subject to your device privacy settings. We do not use any additional third-party analytics or crash reporting services.</li>
+            <li>Note: Apple may also collect anonymized usage and crash data through its built-in App Analytics system, subject to your device privacy settings.</li>
         </ul>
 
         <h2>3. How We Collect Data</h2>
@@ -184,8 +201,9 @@
         <ul>
             <li><strong>Supabase</strong> (supabase.com) — hosts our database, authentication, and file storage. Your account data, reviews, and watchlist are stored in Supabase's infrastructure. <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase Privacy Policy</a>.</li>
             <li><strong>TMDB</strong> (themoviedb.org) — provides movie metadata (titles, posters, descriptions, release dates). We query TMDB on your behalf; no personal data is sent to TMDB. <a href="https://www.themoviedb.org/privacy-policy" target="_blank" rel="noopener">TMDB Privacy Policy</a>.</li>
+            <li><strong>Datadog</strong> (datadoghq.com) — provides analytics, crash and error reporting, and, if you opt in, session replay, so we can understand how the app is used, diagnose problems, and improve performance. We identify you to Datadog only by a random account identifier — never your email address or name. Datadog processes this data on our behalf in the United States. <a href="https://www.datadoghq.com/legal/privacy/" target="_blank" rel="noopener">Datadog Privacy Policy</a>.</li>
         </ul>
-        <p>We do not use any advertising, analytics, or crash-reporting third-party services.</p>
+        <p>We do not use any advertising or ad-targeting third-party services.</p>
 
         <h2>5. Links to Other Sites</h2>
         <p>The app may contain links to external websites (such as TMDB movie pages or streaming services). We are not responsible for the privacy practices of these third-party sites and encourage you to review their privacy policies independently.</p>
@@ -200,6 +218,7 @@
             <li>Improve app performance and fix bugs</li>
         </ul>
         <p>We do <strong>not</strong> use your data for advertising, profiling, or automated decision-making.</p>
+        <p>Our legal basis for analytics and crash reporting is our legitimate interest in maintaining and improving the app, and you can opt out at any time in Settings. Our legal basis for session replay is your consent, which you give by turning it on and can withdraw at any time.</p>
 
         <h2>7. Data Storage &amp; Security</h2>
         <p>Your data is stored in Supabase's cloud infrastructure with the following protections:</p>
@@ -210,8 +229,11 @@
             <li>Profile photos are stored in access-controlled Supabase Storage buckets</li>
         </ul>
 
+        <h3>International Data Transfers</h3>
+        <p>Analytics and diagnostics data is processed by Datadog in the United States. Where your personal data is transferred outside the European Economic Area, that transfer is protected by appropriate safeguards: Datadog is certified under the EU-U.S. Data Privacy Framework and additionally relies on the European Commission’s Standard Contractual Clauses.</p>
+
         <h2>8. Data Retention</h2>
-        <p>We retain your data for as long as your account is active. When you delete your account, we permanently delete all associated data, including:</p>
+        <p>We retain your data for as long as your account is active. When you delete your account, we permanently and irreversibly delete the following from the app, immediately:</p>
         <ul>
             <li>Your profile and account information</li>
             <li>All reviews and ratings</li>
@@ -219,14 +241,16 @@
             <li>Your profile photo</li>
             <li>Your authentication record</li>
         </ul>
-        <p>Deletion is immediate and irreversible.</p>
+        <p>Analytics and diagnostics data held by Datadog is keyed to your random account identifier — not your email or name — and is retained for a limited period in line with Datadog’s retention policy. Deleting your account removes your data from the app immediately; you can also stop new analytics collection at any time from Settings.</p>
 
         <h2>9. Your Rights</h2>
         <p>You have the right to:</p>
         <ul>
             <li><strong>Access your data</strong> — view your profile, reviews, and watchlist directly in the app.</li>
-            <li><strong>Delete your data</strong> — delete your account from the app (Settings &gt; Account Settings &gt; Delete Account). This permanently removes all your data.</li>
+            <li><strong>Delete your data</strong> — delete your account from the app (Settings &gt; Account Settings &gt; Delete Account). This permanently removes your data from the app.</li>
             <li><strong>Withdraw consent</strong> — you can stop using the app at any time. Deleting the app alone does not delete your account; use the in-app deletion option first.</li>
+            <li><strong>Opt out of analytics</strong> — turn off usage analytics at any time in Settings.</li>
+            <li><strong>Session replay is off by default</strong> — it is only collected if you turn it on, and you can turn it off again at any time.</li>
         </ul>
         <p>If you are located in the European Economic Area, you also have the right to request portability of your data and to lodge a complaint with your local data protection authority. In France, the relevant authority is the CNIL (cnil.fr). If you are unsatisfied with how we handle your data or a data request, please contact us first at <a href="mailto:privacy@popkorner.app">privacy@popkorner.app</a> so we can try to resolve it directly.</p>
         <p>For data requests beyond what the app provides, contact us at <a href="mailto:privacy@popkorner.app">privacy@popkorner.app</a>.</p>
