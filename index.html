@@ -959,6 +959,36 @@
         .cta-final:hover {
             opacity: 0.8;
         }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+        .social-link {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+        .social-link img {
+            width: 19px;
+            height: 19px;
+            object-fit: contain;
+        }
+        .social-link:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.32);
+            background: rgba(255, 255, 255, 0.09);
+        }
+        .social-link:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
 
         /* ─── Footer ──────────────────────────────────────────────────── */
         footer {
@@ -1480,6 +1510,14 @@
         <a class="cta-final reveal d-2" href="https://apps.apple.com/app/id6759470556" target="_blank" rel="noopener">
             <img src="assets/app-store-badge-black.svg" alt="Download on the App Store">
         </a>
+        <nav class="social-links reveal d-3" aria-label="Follow Popkorner on social media">
+            <a class="social-link" href="https://x.com/popkorner_app" target="_blank" rel="noopener noreferrer" aria-label="Follow Popkorner on X">
+                <img src="assets/x-logo.svg" alt="" aria-hidden="true">
+            </a>
+            <a class="social-link" href="https://www.instagram.com/popkorner.app/" target="_blank" rel="noopener noreferrer" aria-label="Follow Popkorner on Instagram">
+                <img src="assets/instagram-glyph.svg" alt="" aria-hidden="true">
+            </a>
+        </nav>
     </div>
 </section>
 
